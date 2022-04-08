@@ -1,4 +1,4 @@
-package com.kd.example.koin.activity.base
+package com.kd.example.restapi.activity.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

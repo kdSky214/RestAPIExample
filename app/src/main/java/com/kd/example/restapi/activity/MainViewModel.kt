@@ -1,4 +1,4 @@
-package com.kd.example.koin.activity
+package com.kd.example.restapi.activity
 
 import androidx.lifecycle.ViewModel
 

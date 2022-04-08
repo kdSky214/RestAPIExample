@@ -7,7 +7,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.kd.example.koin"
+        applicationId "com.kd.example.restapi"
         minSdk 23
         targetSdk 32
         versionCode 1
@@ -39,6 +39,7 @@ android {
 dependencies {
 
     ext.koin_version= "3.1.6"
+    ext.retrofit_version= "2.9.0"
 //Koin
     // Koin Core features
     implementation "io.insert-koin:koin-core:$koin_version"
@@ -54,6 +55,18 @@ dependencies {
     // Jetpack Compose
     implementation "io.insert-koin:koin-androidx-compose:$koin_version"
 
+
+    //Retrofit
+    // Scalars 변환기 라이브러리
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6'
+    implementation 'com.squareup.okhttp3:okhttp-tls:5.0.0-alpha.6'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:5.0.0-alpha.6'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'

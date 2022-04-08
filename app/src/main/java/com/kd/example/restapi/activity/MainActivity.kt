@@ -1,9 +1,9 @@
-package com.kd.example.koin.activity
+package com.kd.example.restapi.activity
 
 import android.os.Bundle
-import com.kd.example.koin.R
-import com.kd.example.koin.activity.base.BaseActivity
-import com.kd.example.koin.databinding.ActivityMainBinding
+import com.kd.example.restapi.R
+import com.kd.example.restapi.activity.base.BaseActivity
+import com.kd.example.restapi.databinding.ActivityMainBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {

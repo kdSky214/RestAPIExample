@@ -1,15 +1,18 @@
-package com.kd.example.koin
+package com.kd.example.restapi
 
 import android.app.Application
-import com.kd.example.koin.di.ViewModelModule
+import com.kd.example.restapi.di.NetworkModule
+import com.kd.example.restapi.di.RepositoryModule
+import com.kd.example.restapi.di.ViewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
-import org.koin.androidx.workmanager.koin.workManagerFactory
-import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 
 class App : Application() {
 
+    companion object{
+        const val retrofitUrl = "http://192.168.0.101:20333"
+    }
     override fun onCreate() {
         super.onCreate()
         createKoin()
@@ -19,7 +22,7 @@ class App : Application() {
         startKoin {
             androidLogger()
             androidContext(this@App)
-            koin.loadModules(listOf(ViewModelModule))
+            koin.loadModules(listOf(NetworkModule, ViewModelModule, RepositoryModule))
         }
     }
 
