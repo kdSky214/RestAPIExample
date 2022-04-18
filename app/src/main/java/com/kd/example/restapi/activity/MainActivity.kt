@@ -1,6 +1,7 @@
 package com.kd.example.restapi.activity
 
 import android.os.Bundle
+import android.widget.TextView
 import com.kd.example.restapi.R
 import com.kd.example.restapi.activity.base.BaseActivity
 import com.kd.example.restapi.databinding.ActivityMainBinding
@@ -22,6 +23,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun initObservers() {
+        viewModel.resultLiveData.observe(this) {
+            binding.txtStatus.setText(it, TextView.BufferType.NORMAL)
+        }
 
+        viewModel.testRestfulGet()
     }
 }

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -29,7 +30,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
     buildFeatures {
         viewBinding true
         dataBinding true
@@ -40,6 +47,10 @@ dependencies {
 
     ext.koin_version= "3.1.6"
     ext.retrofit_version= "2.9.0"
+//timber
+    ext.timeber_version = '5.0.1'
+    implementation "com.jakewharton.timber:timber:$timeber_version"
+
 //Koin
     // Koin Core features
     implementation "io.insert-koin:koin-core:$koin_version"
@@ -62,6 +73,9 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:29.3.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6'
